@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup_namer/widgets/hardware.dart';
 import 'package:startup_namer/widgets/layout_sample.dart';
 import 'package:startup_namer/widgets/random_words.dart';
 
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
             children: [
               RandomWords(),
               LayoutSample(),
-              Text("K")
+              Hardware()
             ]
           ),
         ),
