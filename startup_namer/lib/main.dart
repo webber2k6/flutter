@@ -43,7 +43,20 @@ class _RandomWordsState extends State<RandomWords> {
       title: Text(
         pair.asSnakeCase,
         style: _biggerFont,
-      )
+      ),
+      trailing: Icon(
+        alreadySaved ? Icons.favorite : Icons.favorite_border,
+        color: alreadySaved ? Colors.blueAccent : null,
+      ),
+      onTap: () {
+        setState(() {
+          if (alreadySaved) {
+            _savedSuggestions.remove(pair);
+          } else {
+            _savedSuggestions.add(pair);
+          }
+        });
+      },
     );
   }
 
