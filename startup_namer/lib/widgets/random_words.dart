@@ -18,14 +18,14 @@ class _RandomWordsState extends State<RandomWords> {
     return Scaffold( // Add from here...
       body: _buildSuggestions(),
       floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.orange,
+          backgroundColor: Theme.of(context).primaryColor,
           child: const Icon(Icons.list),
           onPressed: _pushSaved
       ),
     );
   }
 
-  Widget _buildRow(WordPair pair) {
+  Widget _buildRow(BuildContext context, WordPair pair) {
     final alreadySaved = _savedSuggestions.contains(pair);
     return ListTile(
       title: Text(
@@ -34,7 +34,7 @@ class _RandomWordsState extends State<RandomWords> {
       ),
       trailing: Icon(
         alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.orange : null,
+        color: alreadySaved ? Theme.of(context).primaryColor : null,
       ),
       onTap: () {
         setState(() {
@@ -77,7 +77,7 @@ class _RandomWordsState extends State<RandomWords> {
             // suggestions list.
             _suggestions.addAll(generateWordPairs().take(10));
           }
-          return _buildRow(_suggestions[index]);
+          return _buildRow(_context, _suggestions[index]);
         }
     );
   }
