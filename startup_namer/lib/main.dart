@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                     text: 'Layout'
                 ),
                 Tab(
-                    icon: Icon(Icons.hardware_outlined),
+                    icon: Icon(Icons.memory),
                     text: 'Hardware'
                 ),
               ]
