@@ -9,13 +9,34 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const RandomWords(),
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(
+              tabs: [
+                Tab(child: Text('Startup Name Generator')),
+                Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.directions_bike)),
+              ]
+            ),
+            title: const Text('Flutter Workshop'),
+          ),
+          body: const TabBarView(
+            children: [
+              RandomWords(),
+              Text("K"),
+              Text("K")
+            ]
+          ),
+        ),
+      ),
+      // home: const RandomWords(),
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           color: Colors.orange
         ),
       ),
-      title: 'Welcome to Flutter',
     );
   }
 }
@@ -35,13 +56,12 @@ class _RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     return Scaffold( // Add from here...
-      appBar: AppBar(
-        actions: [
-          IconButton(icon: const Icon(Icons.list), onPressed: _pushSaved),
-        ],
-        title: const Text('Startup Name Generator'),
-      ),
       body: _buildSuggestions(),
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.orange,
+          child: const Icon(Icons.list),
+          onPressed: _pushSaved
+      ),
     );
   }
 
