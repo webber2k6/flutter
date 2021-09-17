@@ -8,9 +8,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      home: const RandomWords(),
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          color: Colors.orange
+        ),
+      ),
       title: 'Welcome to Flutter',
-      home: RandomWords()
     );
   }
 }
@@ -49,7 +54,7 @@ class _RandomWordsState extends State<RandomWords> {
       ),
       trailing: Icon(
         alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.blueAccent : null,
+        color: alreadySaved ? Colors.orange : null,
       ),
       onTap: () {
         setState(() {
