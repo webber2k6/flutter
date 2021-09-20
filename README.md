@@ -1,4 +1,4 @@
-# startup_namer
+# Flutter Workshop
 
 A new Flutter project.
 
