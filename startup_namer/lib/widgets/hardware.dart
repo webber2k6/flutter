@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-// import 'package:flutter_gpiod/flutter_gpiod.dart';
+import 'package:flutter_gpiod/flutter_gpiod.dart';
 import 'package:geolocator/geolocator.dart';
 
 class Hardware extends StatefulWidget {
@@ -41,13 +41,13 @@ class _HardwareStateState extends State<Hardware> {
               crossAxisAlignment: CrossAxisAlignment.start,
             )
           ),
-          // ListTile(
-          //   title: const Text('Chips'),
-          //   subtitle: Row(
-          //     children: FlutterGpiod.instance.chips.map((chip) => Text("${chip.name}|${chip.label}")).toList(),
-          //     crossAxisAlignment: CrossAxisAlignment.start,
-          //   )
-          // )
+          ListTile(
+            title: const Text('Chips'),
+            subtitle: Row(
+              children: FlutterGpiod.instance.chips.map((chip) => Text("${chip.name}|${chip.label}")).toList(),
+              crossAxisAlignment: CrossAxisAlignment.start,
+            )
+          )
         ],
         padding: const EdgeInsets.all(16),
     );
